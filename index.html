@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Tuinhuis Configurator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="configurator.js" defer></script>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; }
+        #canvas-container { width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; }
+        #controls { position: absolute; top: 20px; left: 20px; background: rgba(255, 255, 255, 0.8); padding: 10px; border-radius: 5px; }
+        label, select, input { display: block; margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <label>Lengte (m): <input type="number" id="length" value="4"></label>
+        <label>Breedte (m): <input type="number" id="width" value="3"></label>
+        <label>Hoogte (m): <input type="number" id="height" value="2.5"></label>
+        <label>Materiaal:
+            <select id="material">
+                <option value="wood">Hout</option>
+                <option value="aluminium">Aluminium</option>
+            </select>
+        </label>
+        <label>Daktype:
+            <select id="roofType">
+                <option value="flat">Plat</option>
+                <option value="gable">Puntdak</option>
+                <option value="shed">Lessenaarsdak</option>
+            </select>
+        </label>
+        <button onclick="updateModel()">Update Model</button>
+    </div>
+    <div id="canvas-container"></div>
+</body>
+</html>
